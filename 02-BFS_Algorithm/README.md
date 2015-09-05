@@ -36,25 +36,21 @@ Class ParseNetworkFile
                               and resize point[] by node number
                     case 'a': store the arc, from, to and arc id by counting
 ```
----  
-**ForwardStar_assignStartPoint **  
+**ForwardStar_assignStartPoint**  
 ```
         call  sort(arcs.begin(), arcs.end(), mySortFunctionByTail);
 ``` 
----  
 **mySortFunctionByTail(a1,a2)**  
 ```
         if a1.tail != a2.tail
             do return (a1.tail < a2.tail)
         else do return (a1.head < a2.head)
 ```  
----  
-**ForwardStar_assignStartPoint **  
+**ForwardStar_assignStartPoint**  
 ```
         call  sort(arcs.begin(), arcs.end(), mySortFunctionByTail);
         use point[] to record different start node(when we meet new tail)
 ```
----  
 **BFS(int sourceNodeNo)**    
 ```
         queue <int> q
@@ -70,14 +66,12 @@ Class ParseNetworkFile
                     q.push(to);
                 cout<<to<<"["<<DistanceLabel[to]<<"] ";
 ```
----  
 **DFS(int sNodeNo, int tNodeNo)**  
 ```
         initialize visitStatus, shortestPathLength
         push sNodeNo to currentPath
         call DFS_traversal(sNodeNo, tNodeNo) & call printALLPath(sNodeNo, tNodeNo)
 ``` 
----  
 **DFS_traversal(int sNodeNo, int tNodeNo)**  
 ```
         //recursive DFS_traversal
@@ -92,7 +86,6 @@ Class ParseNetworkFile
                 add the currentPath to allPaths vector
                 and update the shortestPathLength
 ```
----  
 **printAllPath(int source, int sink)**   
 ```
         print all possible paths in allPaths vector
