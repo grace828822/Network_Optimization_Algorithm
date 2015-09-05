@@ -20,13 +20,12 @@
 
 ##Function Pseudocode:  
 Class ParseNetworkFile   
-        *   readFile(fileName)  
-        ```
-            ifstream file
-            file.open(fileName)
- 
-            while(getline(file,eachLine))
-                stringstream lineStream(eachLine)
+   ***readFile(fileName)***
+   ```
+   	ifstream file
+        file.open(fileName)
+	while(getline(file,eachLine))
+       		stringstream lineStream(eachLine)
                 while (lineStream >> tmp)
                     lineElement.push_back(tmp)
                 switch(identifier)
@@ -37,22 +36,22 @@ Class ParseNetworkFile
                               and resize point[] by node number
                     case 'a': store the arc, from, to and arc id by counting
         ```  
-        *   ForwardStar_assignStartPoint  
+        ***ForwardStar_assignStartPoint ***
         ```
             call  sort(arcs.begin(), arcs.end(), mySortFunctionByTail);
 	```  
-        *   mySortFunctionByTail(a1,a2)  
+        ***mySortFunctionByTail(a1,a2)***
         ```
             if a1.tail != a2.tail
                 do return (a1.tail < a2.tail)
             else do return (a1.head < a2.head)
 	```  
-        *   ForwardStar_assignStartPoint  
+        ***ForwardStar_assignStartPoint ***
         ```
             call  sort(arcs.begin(), arcs.end(), mySortFunctionByTail);
             use point[] to record different start node(when we meet new tail)
  	```  
-        *   BFS(int sourceNodeNo)  
+        ***BFS(int sourceNodeNo)***  
 	```
         queue <int> q
         bool visitStatus[nodeNumber+1];
@@ -67,13 +66,13 @@ Class ParseNetworkFile
                     q.push(to);
                 cout<<to<<"["<<DistanceLabel[to]<<"] ";
 	```  
-        *   DFS(int sNodeNo, int tNodeNo)
+         ***DFS(int sNodeNo, int tNodeNo) ***
         ```
         initialize visitStatus, shortestPathLength
         push sNodeNo to currentPath
         call DFS_traversal(sNodeNo, tNodeNo) & call printALLPath(sNodeNo, tNodeNo)
  	```  
-        *   DFS_traversal(int sNodeNo, int tNodeNo)
+        ***DFS_traversal(int sNodeNo, int tNodeNo) ***
         ```
         //recursive DFS_traversal
         for( int fromIndex = point[sNodeNo] ; fromIndex < point[sNodeNo+1]; fromIndex++ ) do
@@ -87,7 +86,7 @@ Class ParseNetworkFile
                 add the currentPath to allPaths vector
                 and update the shortestPathLength
 	```  
-        *   printAllPath(int source, int sink)
+         ***printAllPath(int source, int sink) ***
 	```
             print all possible paths in allPaths vector
             if find the current path size  == shortestPathLength
