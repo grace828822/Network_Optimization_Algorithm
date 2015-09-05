@@ -21,8 +21,7 @@
 ##Function Pseudocode:  
 Class ParseNetworkFile   
         *   readFile(fileName)  
-        ```sh
-        
+        ```
             ifstream file
             file.open(fileName)
  
@@ -39,22 +38,22 @@ Class ParseNetworkFile
                     case 'a': store the arc, from, to and arc id by counting
         ```  
         *   ForwardStar_assignStartPoint  
-        ```sh
+        ```
             call  sort(arcs.begin(), arcs.end(), mySortFunctionByTail);
 	```  
         *   mySortFunctionByTail(a1,a2)  
-        ```sh
+        ```
             if a1.tail != a2.tail
                 do return (a1.tail < a2.tail)
             else do return (a1.head < a2.head)
 	```  
         *   ForwardStar_assignStartPoint  
-        ```sh
+        ```
             call  sort(arcs.begin(), arcs.end(), mySortFunctionByTail);
             use point[] to record different start node(when we meet new tail)
  	```  
         *   BFS(int sourceNodeNo)  
-	```sh
+	```
         queue <int> q
         bool visitStatus[nodeNumber+1];
         int DistanceLabel[nodeNumber+1];
@@ -69,13 +68,13 @@ Class ParseNetworkFile
                 cout<<to<<"["<<DistanceLabel[to]<<"] ";
 	```  
         *   DFS(int sNodeNo, int tNodeNo)
-        ```sh
+        ```
         initialize visitStatus, shortestPathLength
         push sNodeNo to currentPath
         call DFS_traversal(sNodeNo, tNodeNo) & call printALLPath(sNodeNo, tNodeNo)
  	```  
         *   DFS_traversal(int sNodeNo, int tNodeNo)
-        ```sh
+        ```
         //recursive DFS_traversal
         for( int fromIndex = point[sNodeNo] ; fromIndex < point[sNodeNo+1]; fromIndex++ ) do
             if (next_point's visitStatus is admissable)  do
@@ -89,7 +88,7 @@ Class ParseNetworkFile
                 and update the shortestPathLength
 	```  
         *   printAllPath(int source, int sink)
-	```sh
+	```
             print all possible paths in allPaths vector
             if find the current path size  == shortestPathLength
                 print out *
